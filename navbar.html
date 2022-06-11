@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ============== boxicons ============= -->
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* ==================== Header Section ======================== */
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 1.5rem 6.25rem;
+            z-index: 9999;
+            display: flex;
+            background-color: transparent;
+            justify-content: space-between;
+            align-items: center;
+            transition: .5s;
+        }
+
+        .logo {
+            color: #000;
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        .logo span {
+            color: #FF7938;
+        }
+
+        .menu__toggle {
+            display: none;
+        }
+
+        .navbar {
+            position: relative;
+            display: flex;
+        }
+
+        .nav__list {
+            margin-left: 2.25rem;
+        }
+
+        .nav__list a {
+            color: #000;
+            font-weight: 400;
+            font-size: .765rem;
+        }
+
+        .nav__list a:hover {
+            color: #FF7938;
+        }
+
+        .scroll-header {
+            background: #fff;
+            padding: .625rem 6.25rem;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, .05);
+        }
+
+        /* ================ Breakpoint =============== */
+
+        @media screen and (max-width: 991px) {
+
+            /* =========== header =========== */
+            .header,
+            .scroll-header {
+                padding: .625rem 1.25rem;
+            }
+
+            .wrap {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: 100%;
+                position: fixed;
+                top: 0;
+                left: 0;
+                background: #fff;
+                transform: translateX(100%);
+            }
+
+            .navbar {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+            }
+
+            .wrap.show-menu {
+                transform: translateX(0);
+                transition: .5s;
+            }
+
+            .nav__list {
+                font-size: 1.6rem;
+                margin: .625rem;
+            }
+
+            .nav__list a {
+                font-size: 1.25rem;
+            }
+
+            .menu__toggle {
+                display: inline-block;
+                position: relative;
+                font-size: 35px;
+                cursor: pointer;
+            }
+
+            .menu__close {
+                position: absolute;
+                right: 1rem;
+                top: 1rem;
+                color: #000;
+            }
+        }
+    </style>
+    <title>Navbar</title>
+</head>
+
+<body>
+    <!-- ============================= HEADER SECTION ============================ -->
+    <header class="header" id="header">
+        <a href="#" class="logo">NAMA<span>WEB</span></a>
+        <div class="menu__toggle" id="menuOpen"><i class='bx bx-menu'></i></div>
+        <div class="wrap" id="menu">
+            <ul class="navbar">
+                <li class="nav__list"><a href="#">Home</a></li>
+                <li class="nav__list"><a href="#">Tour</a></li>
+                <li class="nav__list"><a href="#">Blog</a></li>
+                <li class="nav__list"><a href="#">Services</a></li>
+                <li class="nav__list"><a href="#">About Us</a></li>
+            </ul>
+            <div class="menu__toggle menu__close" id=menuClose><i class='bx bx-x'></i></div>
+        </div>
+    </header>
+
+    <script>
+        function scrollHeader() {
+            const nav = document.getElementById('header')
+            // When the scroll is greater than 200 viewport height, add the scroll-header class to the header tag
+            if (this.scrollY > 0) nav.classList.add('scroll-header'); else nav.classList.remove('scroll-header')
+        }
+        window.addEventListener('scroll', scrollHeader)
+
+        /*========================= TOGGLE MENU ============================*/
+        const navOpen = document.getElementById('menuOpen')
+        const navClose = document.getElementById('menuClose')
+        const navMenu = document.getElementById('menu')
+
+        /*===== MENU SHOW =====*/
+        if (navOpen) {
+            navOpen.addEventListener('click', () => {
+                navMenu.classList.add('show-menu')
+            })
+        }
+        /*===== MENU HIDDEN =====*/
+        if (navClose) {
+            navClose.addEventListener('click', () => {
+                navMenu.classList.remove('show-menu')
+            })
+        }
+    </script>
+</body>
+
+</html>
