@@ -1,0 +1,369 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* ================== resuse class ==================== */
+.section{
+    padding: 2rem 0 4rem;
+}
+
+.container{
+    max-width: 1100px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section__head{
+    margin: 1rem 5rem 2rem;
+    display: flex;
+    border-bottom: 1px solid #000;
+    padding-bottom: 1rem;
+}
+
+.section__title{
+    flex: 70%;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.section__link{
+    flex: 30%;
+    text-align: right;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 1rem;
+    font-weight: 500;
+    column-gap: .25rem;
+}
+
+
+/* ==================== Header Section ======================== */
+
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.5rem 6.25rem;
+    z-index: 9999;
+    display: flex;
+    background-color: transparent;
+    justify-content: space-between;
+    align-items: center;
+    transition: .5s;
+}
+
+.logo{
+    color: #fff;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.logo span{
+    color: #FF7938;
+}
+
+.menu__toggle{
+    display: none;
+}
+
+.navbar{
+    position: relative;
+    display: flex;
+}
+
+.nav__list{
+    margin-left: 2.25rem;
+}
+
+.nav__list a{
+    color: #fff;
+    font-weight: 400;
+    font-size: .765rem;
+}
+
+.nav__list a:hover{
+    color: #FF7938;
+}
+
+.scroll-header{
+    background: linear-gradient(to right, rgba(0, 0, 0, .6), rgba(0, 0, 0, .9));
+    padding: .625rem 6.25rem;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, .05);
+}
+
+
+/* ============================= HOME SECTION ============================= */
+.home{
+    height: 100vh;
+    background: linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, .9)),
+        url(/assets/img/wall2.jpg) top center no-repeat;
+    background-size: cover;
+    position: relative;
+    z-index: 1;
+    overflow-y: hidden;
+    margin-bottom: 3rem;
+}
+
+.home__container{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding-left: 6rem;
+    top: 10rem;
+    color: #fff;
+}
+
+.home__title{
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+.home__subtitle{
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.home__description{
+    font-size: .8rem;
+    font-weight: 400;
+    padding-left: 2rem;
+    margin-bottom: 2rem;
+    border-left: 1px solid #fff;
+}
+
+.home__button{
+    display: flex;
+}
+
+.btn{
+    font-size: .8rem;
+    font-weight: 500;
+    width: 180px;
+    padding: .2rem .5rem;
+    margin-right: 1rem;
+    border: 1.5px solid #fff;
+    text-align: center;
+    transition: .5s;
+    cursor: pointer;
+}
+
+.btn:hover{
+    background: #fff;
+    color: #000;
+}
+
+/* ================================== TOUR SECTION ============================ */
+.card__wrap{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: .5rem;
+    justify-items: center;
+    margin-bottom: 3rem;
+}
+
+
+.card{
+    border-radius: .5rem;
+    width: 270px;
+    height: 360px;
+    overflow: hidden;
+    position: relative;
+}
+
+.card__image{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, .4)),
+        url(/assets/img/madobak.jpg) top center no-repeat;
+    background-size: cover;
+    transition: .5s;
+}
+
+.card__title{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+    height: 18%;
+    text-transform: uppercase;
+    background: rgba(0, 0, 0, 0.8);
+    padding-top: .825rem;
+}
+
+.card__title h3{
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+.card:hover .card__image{
+    transform: scale(125%);
+    transition: .5s ease-out;
+}
+
+/* ====================================== Blog's Section ============================ */
+.blog__wrap{
+    display: flex;
+}
+
+.blog__main-content{
+    flex: 60%;
+    padding: 1rem;
+}
+
+.blog__main-image{
+    size: initial;
+    width: 100%;
+    height: 50%;
+    border-radius: 1rem;
+}
+
+.blog__main-title,
+.blog__side-title{
+    font-weight: 600;
+}
+
+.side__content-wrap{
+    flex: 40%;
+    padding: 1rem;
+}
+
+.blog__side-content{
+    display: flex;
+    margin-bottom: 1rem;
+}
+
+.blog__side-image{
+    flex: 30%;
+    width: 150px;
+    height: 150px;
+    border-radius: .5rem;
+    margin-right: .5rem;
+}
+
+.blog__side-description{
+    flex: 70%;
+}
+
+.blog__side-title,
+.blog__side-text{
+    font-size: 14px;
+}
+
+
+/* ================ Breakpoint =============== */
+
+@media screen and (max-width: 991px) {
+    /* =========== header =========== */
+    .header,
+    .scroll-header{
+        padding: .625rem 1.25rem;
+    }
+
+    .wrap{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: #fff;
+        transform: translateX(100%);
+    }
+    
+    .navbar{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    
+    .wrap.show-menu{
+        transform: translateX(0);
+        transition: .5s;
+    }
+    
+    .nav__list{
+        font-size: 1.6rem;
+        margin: .625rem;
+    }
+
+    .nav__list a{
+        font-size: 1.25rem;
+        color: #000;
+    }
+
+    .menu__toggle{
+        display: inline-block;
+        position: relative;
+        font-size: 35px;
+        cursor: pointer;
+        color: #fff;
+    }
+
+    .menu__close{
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
+        color: #000;
+    }
+
+    /* =========== home ========== */
+    .home__container{
+        text-align: center;
+        padding-left: 0;
+    }
+
+    .home__description{
+        border: none;
+        padding: 0;
+    }
+
+    .home__button{
+        justify-content: center;
+    }
+
+    .btn{
+        margin: 0 1rem;
+        width: 150px;
+        padding: .3rem .4rem;
+    }
+
+    /* ========== Tour ============= */
+    .card{
+        width: 240px;
+        height: 320px;
+    }
+
+    .card__wrap{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
